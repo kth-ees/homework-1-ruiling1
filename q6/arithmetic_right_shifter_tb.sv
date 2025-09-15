@@ -16,18 +16,18 @@ module arithmetic_right_shifter_tb;
 
    initial begin
    
-    //01010 (10)
-    input_data = 5'b01010;
-    for (int i = 0; i < 4; i++) begin
+    //01011110 
+    input_data = 8'b01011110;
+     for (int i = 0; i < 7; i++) begin
       control = i;
       #1; 
       $display("Input=%b , Shift=%b -> Output=%b", 
                 input_data, i, shifted_result);
     end
 
-    //11010 (-6, MSB=1)
-    input_data = 5'b11010;
-    for (int i = 0; i < 4; i++) begin
+    //11011110 ( MSB=1)
+    input_data = 8'b11011110;
+     for (int i = 0; i < 7; i++) begin
       control = i;
       #1;
       $display("Input=%b, Shift=%b -> Output=%b", 
