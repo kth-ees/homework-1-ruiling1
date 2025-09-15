@@ -5,4 +5,6 @@ module arithmetic_right_shifter #(parameter N) (
 );
 
   // complete the module
+    assign shifted_result = (input_data >> control) | 
+                        ({N{input_data[N-1]}} << (N - control));
 endmodule
