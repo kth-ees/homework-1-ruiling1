@@ -4,7 +4,7 @@ module arithmetic_right_shifter_tb;
 
   // complete
   // Inputs
-  logic [N-1:0] input_data;
+   logic [N-1:0] input_data;
   logic [1:0]   control;
   logic [N-1:0] shifted_result;
 
@@ -16,21 +16,22 @@ module arithmetic_right_shifter_tb;
 
    initial begin
    
-    //01011110 
-    input_data = 8'b01011110;
-     for (int i = 0; i < 7; i++) begin
-      control = i;
-      #1; 
-      $display("Input=%b , Shift=%b -> Output=%b", 
-                input_data, i, shifted_result);
-    end
+        //01011110 
+        input_data = 8'b01011110;
+        for (int i = 0; i < 7; i++) begin
+            control = i;
+            #1; 
+            $display("Input=%b , Shift=%b -> Output=%b", 
+                        input_data, i, shifted_result);
+        end
 
-    //11011110 ( MSB=1)
-    input_data = 8'b11011110;
-     for (int i = 0; i < 7; i++) begin
-      control = i;
-      #1;
-      $display("Input=%b, Shift=%b -> Output=%b", 
-                $signed(input_data), i, $signed(shifted_result));
+        //11011110 (MSB=1)
+        input_data = 8'b11011110;
+        for (int i = 0; i < 7; i++) begin
+            control = i;
+            #1;
+            $display("Input=%b, Shift=%b -> Output=%b", 
+                    $signed(input_data), i, $signed(shifted_result));
+        end
     end
 endmodule
